@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #E6D9FF, #5A189A);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+/* LETTER */
+.letter-container {
+  width: 100%;
+  max-width: 420px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.letter {
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(90,24,154,0.35);
+}
+
+h1 {
+  color: #5A189A;
+}
+
+/* REACTION BOX */
+.reaction {
+  position: relative;
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(157,78,221,0.12);
+  animation: popIn 0.6s ease;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.reaction img {
+  width: 200px;
+  max-width: 70vw;
+  border-radius: 16px;
+}
+
+.reaction p {
+  margin-top: 10px;
+  color: #5A189A;
+  font-size: 16px;
+}
+
+/* Purple sparkle glow */
+.sparkle {
+  position: absolute;
+  inset: -6px;
+  border-radius: 24px;
+  background: radial-gradient(circle, rgba(157,78,221,0.35), transparent 70%);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.message {
+  color: #6b5b95;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, #9D4EDD, #5A189A);
+  color: white;
+}
+
+#noBtn {
+  background: #F3ECFF;
+  color: #5A189A;
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* SECRET */
+.secret-container {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.secret-envelope {
+  font-size: 70px;
+  cursor: pointer;
+}
+
+.secret-page {
+  position: fixed;
+  inset: 0;
+  background: #fff0f5;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 999;
+}
+
+.secret-page.show {
+  display: flex;
+}
+
+.page-content {
+  max-width: 90%;
+  font-size: 18px;
+  color: #5A189A;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* CELEBRATION CANVAS */
+#celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none; /* THIS IS THE MAGIC */
+}
+
